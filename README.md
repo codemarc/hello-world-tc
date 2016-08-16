@@ -16,10 +16,3 @@ Great, So I generate a new app using this tool and generate eclipse project and 
 I load up the project into eclipse and we are ready to rumble. I locate the @SpringBootApplication annotation and run the main class HelloWorldTcApplication and like
 magic I get a spring booted Tomcat instance running on my [http://localhost:8080](http://localhost:8080)
 
-
-
-
-
-#### Questions to be answered ####
-
-1. 
