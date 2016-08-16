@@ -13,6 +13,34 @@ Great, So I generate a new app using this tool and generate eclipse project and 
 
 > $ mvn eclipse:eclipse package
 
-I load up the project into eclipse and we are ready to rumble. I locate the @SpringBootApplication annotation and run the main class HelloWorldTcApplication and like
-magic I get a spring booted Tomcat instance running on my [http://localhost:8080](http://localhost:8080)
+I load up the project into eclipse and we are ready to rumble. I locate the @SpringBootApplication annotation and run the main class HelloWorldTcApplication and like magic I get a spring booted Tomcat instance running on my [http://localhost:8080](http://localhost:8080)
+
+#### Spring security ###
+And now I face and interesting security challenge. I want to override the builtin default security with one of my own:
+
+~~~
+@Configuration
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth.inMemoryAuthentication()
+                .withUser("hello").password("world").roles("USER");	
+    }
+}
+~~~
+
+#### Package and Push ####
+
+To deploy this version to cloud foundry the documentations says you need to push a war file.
+A simple upgrade to the packging attribute of my pom.xml to build a war:
+
+~~~
+$ mvn package 
+$ cf push hello-world-tc -p target/hello-world-tc-0.0.1-SNAPSHOT.war
+~~~
+
+and now we can test this at: [http://hello-world-tc.cfapps.io/](http://hello-world-tc.cfapps.io/)
+
+<br/><br/><br/>
 
