@@ -40,7 +40,9 @@ $ mvn package
 $ cf push hello-world-tc -p target/hello-world-tc-0.0.1-SNAPSHOT.war
 ~~~
 
-and now we can test this at: [http://hello-world-tc.cfapps.io/](http://hello-world-tc.cfapps.io/)
+You can see the deployed app running via Pivotal Web Services at:
+
+### [http://hello-world-tc.cfapps.io/](http://hello-world-tc.cfapps.io/) ###
 
 <br/><br/><br/>
 
