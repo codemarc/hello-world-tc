@@ -9,7 +9,7 @@ As I was thinking about the second part of the assignment it occurred to me that
 For Java there is a nice website the creates a Spring boot head start **See**: 
 [Spring Initializ](http://start.spring.io/).
 
-Great, So I generate a new app using this tool and generate eclipse project and classpath and initial build as followa:
+Great, So I generate a new app using this tool and generate eclipse project and classpath and initial build as follows:
 
 > $ mvn eclipse:eclipse package
 
